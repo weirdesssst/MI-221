@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class TextManipulator {
     private TextOperations operations;
 
@@ -31,8 +33,12 @@ public class TextManipulator {
     }
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); // Create scanner object to read input
         TextManipulator manipulator = new TextManipulator();
-        String inputText = "Hello, this is a simple text.\nLet's manipulate it!";
-        manipulator.manipulateText(inputText);
+
+        System.out.println("Please enter the text to manipulate:");
+        String inputText = scanner.nextLine(); // Get user input
+
+        manipulator.manipulateText(inputText); // Perform all operations on user input
     }
 }
