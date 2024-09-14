@@ -70,11 +70,11 @@ public class TextManipulator {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); // Create scanner object to read input
         TextManipulator manipulator = new TextManipulator();
 
         System.out.println("Please enter the text to manipulate:");
-        String inputText = scanner.nextLine();
+        String inputText = scanner.nextLine(); // Get user input
 
         int choice;
         do {
@@ -84,6 +84,6 @@ public class TextManipulator {
             manipulator.manipulateText(inputText, choice);
         } while (choice != 0);
 
-        scanner.close();
+        scanner.close(); // Close scanner
     }
 }
