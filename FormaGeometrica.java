@@ -18,6 +18,7 @@ class Cerc extends FormaGeometrica {
         return Math.PI * raza * raza;
     }
 }
+
 class Dreptunghi extends FormaGeometrica {
     private double lungime;
     private double latime;
@@ -31,3 +32,4 @@ class Dreptunghi extends FormaGeometrica {
         return 2 * (lungime + latime);
     }
 }
+
