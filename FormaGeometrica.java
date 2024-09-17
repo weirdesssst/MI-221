@@ -6,3 +6,30 @@ public class FormaGeometrica {
         System.out.println("Perimetrul dreptunghiului: " + dreptunghi.calculeazaPerimetrul());
     }
 }
+
+class Cerc extends FormaGeometrica {
+    private double raza;
+
+    public Cerc(double raza) {
+        this.raza = raza;
+    }
+
+    public double calculeazaAria() {
+        return Math.PI * raza * raza;
+    }
+}
+
+class Dreptunghi extends FormaGeometrica {
+    private double lungime;
+    private double latime;
+
+    public Dreptunghi(double lungime, double latime) {
+        this.lungime = lungime;
+        this.latime = latime;
+    }
+
+    public double calculeazaPerimetrul() {
+        return 2 * (lungime + latime);
+    }
+}
+
