@@ -18,3 +18,5 @@ class Dreptunghi extends FormaGeometrica {
         return 2 * (lungime + latime);
     }
 }
+
+
