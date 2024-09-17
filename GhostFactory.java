@@ -5,6 +5,8 @@ public class GhostFactory {
     public static Ghost getGhost(String type, String name, String color, int scareLevel) {
         if (type.equalsIgnoreCase("friendly")) {
             return new FriendlyGhost(name, color, scareLevel);
+        } else if (type.equalsIgnoreCase("enemy")) {
+            return new EnemyGhost(name, color, scareLevel);
         }
         return null; 
     }
@@ -12,7 +14,7 @@ public class GhostFactory {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Introduceți tipul de fantomă (friendly): ");
+        System.out.println("Introduceți tipul de fantomă (friendly/enemy): ");
         String type = scanner.nextLine();
 
         System.out.println("Introduceți numele fantomei: ");
