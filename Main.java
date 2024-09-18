@@ -39,16 +39,29 @@ class Main {
                     }
                     break;
                 case "3":
-                    
+                    Inmultire_Impartire inmultireImpartire = new Inmultire_Impartire();
+                    System.out.print("Introduceti primul numar: ");
+                    a = scanner.nextDouble();
+                    System.out.print("Introduceti al doilea numar: ");
+                    b = scanner.nextDouble();
+                    System.out.println("Rezultatul inmultirii: " + inmultireImpartire.inmulteste(a, b));
                     break;
                 case "4":
-
+                    System.out.print("Introduceti primul numar: ");
+                    a = scanner.nextDouble();
+                    System.out.print("Introduceti al doilea numar: ");
+                    b = scanner.nextDouble();
+                    if (b == 0) {
+                        System.out.println("Impartirea la 0 nu este permisa!");
+                    } else {
+                        System.out.println("Rezultatul impartirii: " + (a / b));
+                    }
                     break;
                 case "5":
 
                     break;
                 case "6":
-                
+
                     break;
                 default:
                     System.out.println("Optiune invalida!");
