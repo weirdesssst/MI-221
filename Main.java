@@ -41,10 +41,10 @@ public class Main {
         while (true) {
             System.out.print(message);
             try {
-                return scanner.nextDouble(); // Incearca sa citeasca un numar de tip double
+                return scanner.nextDouble();
             } catch (InputMismatchException e) {
                 System.out.println("Eroare: Va rugam sa introduceti un numar valid de tip intreg.");
-                scanner.next(); // Reseteaza scanner-ul pentru a putea citi din nou
+                scanner.next();
             }
         }
     }
@@ -57,6 +57,9 @@ public class Main {
             System.out.println("1. Adunare");
             System.out.println("2. Scadere");
             System.out.println("3. Extractie radacina");
+            System.out.println("4. Inmultire");
+            System.out.println("5. Impartire");
+            System.out.println("6. Exponentiere");
             System.out.print("Alegeti o optiune: ");
             int operation = scanner.nextInt();
 
@@ -79,12 +82,21 @@ public class Main {
                         arithmeticOperation = new SquareRoot(num2);
                     } else {
                         System.out.println("Optiune invalida.");
-                        continue;  // Revenire la selecția operației
+                        continue;
                     }
+                    break;
+                case 4:
+                    arithmeticOperation = new MultiplicationDivision(num1, num2, "mul");
+                    break;
+                case 5:
+                    arithmeticOperation = new MultiplicationDivision(num1, num2, "div");
+                    break;
+                case 6:
+                    arithmeticOperation = new Exponentiation(num1, num2);
                     break;
                 default:
                     System.out.println("Optiune invalida.");
-                    continue;  // Revenire la selecția operației
+                    continue;
             }
 
             if (arithmeticOperation != null) {
@@ -96,7 +108,6 @@ public class Main {
                 }
             }
 
-            // Opțiuni pentru a reveni la meniul principal sau a continua
             System.out.println("Doriti sa reveniti la meniul principal?");
             System.out.println("1. Da");
             System.out.println("2. Nu, continua cu aceleasi numere");
@@ -108,14 +119,14 @@ public class Main {
             while (true) {
                 nextStep = scanner.nextInt();
                 if (nextStep == 1 || nextStep == 2 || (allowNumberChange && nextStep == 3)) {
-                    break;  // Optiune valida
+                    break;
                 } else {
                     System.out.println("Optiune invalida. Va rugam sa introduceti o optiune valida.");
                 }
             }
 
             if (nextStep == 1) {
-                break;  // Se revine la meniul principal
+                break;
             } else if (nextStep == 3 && allowNumberChange) {
                 num1 = getValidNumber(scanner, "Introduceti primul numar: ");
                 num2 = getValidNumber(scanner, "Introduceti al doilea numar: ");
@@ -123,4 +134,3 @@ public class Main {
         }
     }
 }
-
