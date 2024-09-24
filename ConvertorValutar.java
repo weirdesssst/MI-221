@@ -1,12 +1,6 @@
-public class conversieValutara {
-    public static void main(String[] args) {
-        System.out.println("Urmeaza cod...");
-    }
-}
-
 // clasa de baza
-class ConvertorValutar {
-    protected double curs;
+public class ConvertorValutar {
+    public double curs;
 
     // constructor
     public ConvertorValutar(double curs) {
