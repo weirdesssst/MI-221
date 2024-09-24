@@ -1,4 +1,4 @@
-public class conversieValutara {
+public class Main {
     public static void main(String[] args) {
         // conversie din MDL in EUR
         MDL_EURconvertor MDLinEUR = new MDL_EURconvertor();
@@ -11,25 +11,5 @@ public class conversieValutara {
         EURinGBP.afiseazaCurs();
         double lire = EURinGBP.converteste(100); // converteste 100 EUR in GBP
         System.out.println("100 EUR in GBP: " + lire);
-    }
-}
-
-// clasa de baza
-class ConvertorValutar {
-    protected double curs;
-
-    // constructor
-    public ConvertorValutar(double curs) {
-        this.curs = curs;
-    }
-
-    // metoda pentru a converti o suma de bani
-    public double converteste(double suma) {
-        return suma * curs;
-    }
-
-    // metoda pentru a afisa cursul valutar
-    public void afiseazaCurs() {
-        System.out.println("Cursul valutar este: " + curs);
     }
 }
