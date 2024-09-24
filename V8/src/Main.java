@@ -27,7 +27,7 @@ public class Main {
                 case 2:
                     int roll12 = dice12.roll();
                     System.out.println("Zarul aruncat arata:" + roll12);
-                    history6.add(roll12);
+                    history12.add(roll12);
                     break;
                 case 3:
                     System.out.println("Istoric pentru zarul cu 6 fete");
