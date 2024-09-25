@@ -14,7 +14,7 @@ public class Main {
             manipulator.displayMenu();
             choice = scanner.nextInt();
             scanner.nextLine();  // Consume the newline character
-            TextOperation operation = null;
+            TextOperations operation = null;
 
             switch (choice) {
                 case 1:
