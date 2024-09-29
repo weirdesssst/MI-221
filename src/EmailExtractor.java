@@ -1,7 +1,7 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class EmailExtractor implements TextExtractor {
+public class EmailExtractor extends TextExtractor {
 
     @Override
     public String extract(String text) {
@@ -13,6 +13,11 @@ public class EmailExtractor implements TextExtractor {
             return matcher.group();
         }
 
-        return "No email found.";
+        return "Nu a fost gasit email.";
+    }
+
+    @Override
+    public String getOperationName() {
+        return "Extragere email";
     }
 }
