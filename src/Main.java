@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        File file = new File("C:/Users/Marleyzzz/IdeaProjects/lab1/example.txt");
+        File file = new File("C:/Users/IGOR/IdeaProjects/lab1/example.txt");
         try {
             if (file.createNewFile()) {
                 System.out.println("Fișierul a fost creat: " + file.getName());
@@ -23,7 +23,7 @@ public class Main {
         }
 
         // Prima parte: manipulările din clasa manipulare
-        manipulare manipulare = new manipulare("C:/Users/Marleyzzz/IdeaProjects/lab1/example.txt");
+        manipulare manipulare = new manipulare("C:/Users/IGOR/IdeaProjects/lab1/example.txt");
         try {
             manipulare.removeExtraSpaces();
             manipulare.removeNewLines();
@@ -36,7 +36,7 @@ public class Main {
         }
 
         // A doua parte: manipulările din clasa ManipulareExtinsa
-        ManipulareExtinsa manipulareExtinsa = new ManipulareExtinsa("C:/Users/Marleyzzz/IdeaProjects/lab1/example.txt");
+        ManipulareExtinsa manipulareExtinsa = new ManipulareExtinsa("C:/Users/IGOR/IdeaProjects/lab1/example.txt");
         try {
             manipulareExtinsa.convertToUpperCase();
             int wordCount = manipulareExtinsa.countWords();

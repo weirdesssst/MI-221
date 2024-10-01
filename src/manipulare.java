@@ -3,40 +3,39 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class manipulare {
-    private Path filePath;
+public class manipulare extends FileManipulator {
 
     public manipulare(String filePath) {
-        this.filePath = Paths.get(filePath);
+        super(filePath);
     }
 
     public void removeExtraSpaces() throws IOException {
-        String content = new String(Files.readAllBytes(filePath));
+        String content = readFile();
         content = content.replaceAll("\\s+", " ").trim();
-        Files.write(filePath, content.getBytes());
+        writeFile(content);
     }
 
     public void removeNewLines() throws IOException {
-        String content = new String(Files.readAllBytes(filePath));
+        String content = readFile();
         content = content.replaceAll("\\r\\n|\\r|\\n", " ");
-        Files.write(filePath, content.getBytes());
+        writeFile(content);
     }
 
     public void reverseText() throws IOException {
-        String content = new String(Files.readAllBytes(filePath));
+        String content = readFile();
         String reversed = new StringBuilder(content).reverse().toString();
-        Files.write(filePath, reversed.getBytes());
+        writeFile(reversed);
     }
 
     public void separateWords() throws IOException {
-        String content = new String(Files.readAllBytes(filePath));
+        String content = readFile();
         content = content.replaceAll("\\s+", " ");
-        Files.write(filePath, content.getBytes());
+        writeFile(content);
     }
 
     public void replaceWords(String target, String replacement) throws IOException {
-        String content = new String(Files.readAllBytes(filePath));
+        String content = readFile();
         content = content.replace(target, replacement);
-        Files.write(filePath, content.getBytes());
+        writeFile(content);
     }
 }

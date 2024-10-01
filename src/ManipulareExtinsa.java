@@ -3,27 +3,26 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class ManipulareExtinsa {
-    private Path filePath;
+public class ManipulareExtinsa extends FileManipulator {
 
     public ManipulareExtinsa(String filePath) {
-        this.filePath = Paths.get(filePath);
+        super(filePath);
     }
 
     public void convertToUpperCase() throws IOException {
-        String content = new String(Files.readAllBytes(filePath));
+        String content = readFile();
         content = content.toUpperCase();
-        Files.write(filePath, content.getBytes());
+        writeFile(content);
     }
 
     public void convertToLowerCase() throws IOException {
-        String content = new String(Files.readAllBytes(filePath));
+        String content = readFile();
         content = content.toLowerCase();
-        Files.write(filePath, content.getBytes());
+        writeFile(content);
     }
 
     public int countWords() throws IOException {
-        String content = new String(Files.readAllBytes(filePath));
+        String content = readFile();
         String[] words = content.trim().split("\\s+");
         return words.length;
     }
