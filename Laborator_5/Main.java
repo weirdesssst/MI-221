@@ -5,7 +5,7 @@ public class Main {
         
         // verifica daca sistemul de operare este windows
         if (os.contains("win")) {
-            // apelare functie
+            WindowsLogReader.readLogs()
         } else {
             System.out.println("Sistem de operare neacceptat: " + os);
         }
